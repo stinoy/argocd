@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csc-admin-portal
+  labels:
+    app: csc-admin-portal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: csc-admin-portal
+  template:
+    metadata:
+      labels:
+        app: csc-admin-portal
+    spec:
+      containers:
+      - name: csc-admin-portal
+        image: nginx:latest
+        ports:
+        - containerPort: 80
