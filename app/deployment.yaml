@@ -5,7 +5,7 @@ metadata:
   labels:
     app: csc-admin-portal
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: csc-admin-portal
@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: csc-admin-portal
-        image: nginx:latest
+        image: public.ecr.aws/k9a0m9b4/stinoy:latest  # Update the tag as needed
         ports:
         - containerPort: 80
+
